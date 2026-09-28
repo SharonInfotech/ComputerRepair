@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "RepairBooking": {
+      "title": "RepairBooking",
+      "description": "Doorstep or in-store repair booking submitted by a customer in Nagpur.",
+      "type": "object",
+      "properties": {
+        "ticketId": {
+          "type": "string",
+          "description": "Unique booking ticket identifier (e.g. SHARON-1024)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Customer full name"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Customer mobile/WhatsApp number"
+        },
+        "address": {
+          "type": "string",
+          "description": "Doorstep pickup address in Nagpur"
+        },
+        "pincode": {
+          "type": "string",
+          "description": "6-digit Nagpur pincode"
+        },
+        "deviceType": {
+          "type": "string",
+          "description": "Service/device category"
+        },
+        "brand": {
+          "type": "string",
+          "description": "Device brand"
+        },
+        "serviceMode": {
+          "type": "string",
+          "enum": ["doorstep", "instore"],
+          "description": "Doorstep pickup or in-store visit"
+        },
+        "issueSummary": {
+          "type": "string",
+          "description": "Description of the issue or requested service"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Booking creation timestamp"
+        }
+      },
+      "required": ["ticketId", "name", "phone", "deviceType", "serviceMode", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/bookings/{bookingId}": {
+      "schema": "RepairBooking",
+      "description": "Customer repair service bookings"
+    }
+  }
+}

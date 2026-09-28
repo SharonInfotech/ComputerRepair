@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Rounded Background -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Circuit Ring -->
+  <rect x="76" y="76" width="360" height="360" rx="48" fill="none" stroke="#334155" stroke-width="12"/>
+  
+  <!-- Microchip Pins -->
+  <path d="M 160 52 L 160 76 M 256 52 L 256 76 M 352 52 L 352 76" stroke="#3b82f6" stroke-width="14" stroke-linecap="round"/>
+  <path d="M 160 436 L 160 460 M 256 436 L 256 460 M 352 436 L 352 460" stroke="#3b82f6" stroke-width="14" stroke-linecap="round"/>
+  <path d="M 52 160 L 76 160 M 52 256 L 76 256 M 52 352 L 76 352" stroke="#3b82f6" stroke-width="14" stroke-linecap="round"/>
+  <path d="M 436 160 L 460 160 M 436 256 L 460 256 M 436 352 L 460 352" stroke="#3b82f6" stroke-width="14" stroke-linecap="round"/>
+  
+  <!-- Main Processor Core Body -->
+  <rect x="116" y="116" width="280" height="280" rx="36" fill="url(#chipGrad)"/>
+  
+  <!-- Core Shield Accent Inner -->
+  <rect x="140" y="140" width="232" height="232" rx="28" fill="#0284c7" opacity="0.4"/>
+  
+  <!-- Stylized 'S' for Sharon Infotech -->
+  <path d="M 310 190 C 310 170, 280 155, 256 155 C 210 155, 190 180, 190 205 C 190 245, 310 240, 310 285 C 310 320, 280 335, 250 335 C 210 335, 190 310, 185 290" fill="none" stroke="#ffffff" stroke-width="32" stroke-linecap="round"/>
+  
+  <!-- Glowing Power Dot -->
+  <circle cx="340" cy="172" r="14" fill="url(#accentGrad)"/>
+</svg>

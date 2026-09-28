@@ -1,0 +1,25 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isValidBooking(data) {
+      return data.keys().hasAll(['ticketId', 'name', 'phone', 'deviceType', 'serviceMode', 'createdAt'])
+        && data.ticketId is string && data.ticketId.size() >= 4 && data.ticketId.size() <= 40
+        && data.name is string && data.name.size() >= 2 && data.name.size() <= 100
+        && data.phone is string && data.phone.size() >= 10 && data.phone.size() <= 20
+        && data.deviceType is string && data.deviceType.size() >= 2 && data.deviceType.size() <= 60
+        && data.serviceMode in ['doorstep', 'instore']
+        && data.createdAt is string && data.createdAt.size() <= 50;
+    }
+
+    match /bookings/{bookingId} {
+      allow read: if request.auth != null && request.auth.token.email == 'prabhu@sharoninfotech.com';
+      allow create: if isValidBooking(request.resource.data);
+      allow update, delete: if request.auth != null && request.auth.token.email == 'prabhu@sharoninfotech.com';
+    }
+
+    match /test/connection {
+      allow read: if true;
+    }
+  }
+}

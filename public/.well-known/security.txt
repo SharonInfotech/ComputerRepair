@@ -1,0 +1,15 @@
+# Security Policy & Vulnerability Disclosure
+# Organization: Sharon Infotech (Nagpur)
+# Primary Portal: https://computerrepairnagpur.com
+# Parent Corporate: https://sharoninfotech.com
+
+Contact: mailto:prabhu@sharoninfotech.com
+Contact: mailto:prabhu@computerrepairnagpur.com
+Contact: tel:+917249430043
+Expires: 2028-12-31T23:59:59.000Z
+Preferred-Languages: en, hi, mr
+Canonical: https://computerrepairnagpur.com/.well-known/security.txt
+Canonical: https://computerrepairnagpur.com/security.txt
+Policy: https://computerrepairnagpur.com/support
+Acknowledgments: https://computerrepairnagpur.com/about
+Hiring: https://computerrepairnagpur.com/about

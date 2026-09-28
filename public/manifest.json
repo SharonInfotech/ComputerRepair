@@ -1,0 +1,48 @@
+{
+  "short_name": "Sharon Infotech",
+  "name": "Sharon Infotech - Computer & Laptop Repair Nagpur",
+  "description": "Nagpur's premier independent computer repair, laptop chip-level repair, printer service, and IT support center since 2013.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512 192x192 any"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "categories": ["business", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Book Doorstep Repair",
+      "short_name": "Book Repair",
+      "description": "Schedule doorstep laptop or computer repair in Nagpur",
+      "url": "/?mode=doorstep#booking",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "WhatsApp Quick Chat",
+      "short_name": "WhatsApp",
+      "description": "Chat directly with Sharon Infotech repair engineers",
+      "url": "https://wa.me/917249430043?text=Hi%20Sharon%20Infotech%2C%20I%20need%20repair%20assistance.",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

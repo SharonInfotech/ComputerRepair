@@ -1,0 +1,88 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/node_modules/**",
+      "dist/server.cjs",
+      "dist/server.cjs.map"
+    ],
+    "headers": [
+      {
+        "source": "/sitemap.xml",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/xml; charset=utf-8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600, s-maxage=86400"
+          }
+        ]
+      },
+      {
+        "source": "/robots.txt",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "/llms.txt",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "/security.txt",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          }
+        ]
+      },
+      {
+        "source": "/.well-known/security.txt",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(js|css|svg|webp|png|jpg|jpeg|woff2)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

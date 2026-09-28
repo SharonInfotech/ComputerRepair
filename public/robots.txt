@@ -1,0 +1,169 @@
+# =====================================================================
+# Robots.txt for Sharon Infotech Nagpur (https://computerrepairnagpur.com)
+# Official Local Repair Portal of Parent Organization: https://sharoninfotech.com
+# Single Authorised Store Location: https://maps.app.goo.gl/wwuRxErEFDjFEqTL6
+# Address: Office No 1, 2nd Floor, Tilak, Panchasheel Square, Dhantoli, Nagpur 440012
+# =====================================================================
+
+# 1. Default Rule for All Search Engine Crawlers (Googlebot, Bingbot, etc.)
+User-agent: *
+Allow: /
+Allow: /services
+Allow: /services/
+Allow: /brands
+Allow: /brands/
+Allow: /service-areas
+Allow: /service-areas/
+Allow: /products
+Allow: /products/
+Allow: /blog
+Allow: /blog/
+Allow: /support
+Allow: /support/
+Allow: /about
+Allow: /contact
+Allow: /sitemap.xml
+Allow: /llms.txt
+Allow: /security.txt
+Allow: /.well-known/security.txt
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /dashboard/
+Disallow: /internal/
+Disallow: /404
+Disallow: /*?*source=
+
+# 2. Google Search, Google Maps & Local Discovery Crawlers
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# 3. AI Search Engines, LLMs & Retrieval Agents (Explicitly Allowed for SEO/GEO)
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: Claude-Web
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: anthropic-ai
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: GoogleOther
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: Applebot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: Applebot-Extended
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: Bingbot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: DuckDuckBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: FacebookBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: meta-externalagent
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: Amazonbot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: CCBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: cohere-ai
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: Bytespider
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /admin/
+
+# =====================================================================
+# Sitemap & Canonical Host Declarations
+# =====================================================================
+Sitemap: https://computerrepairnagpur.com/sitemap.xml
+Host: https://computerrepairnagpur.com
