@@ -16,7 +16,7 @@
     ],
     "headers": [
       {
-        "source": "/sitemap.xml",
+        "source": "/sitemap*.xml",
         "headers": [
           {
             "key": "Content-Type",
@@ -84,7 +84,7 @@
     ],
     "rewrites": [
       {
-        "source": "!/+(sitemap.xml|robots.txt|llms.txt|security.txt)",
+        "source": "!/+(sitemap.xml|sitemap-pages.xml|sitemap-services.xml|sitemap-brands-1.xml|sitemap-brands-2.xml|sitemap-brands-3.xml|sitemap-brands-4.xml|sitemap-brands-5.xml|sitemap-brands-6.xml|sitemap-brands-7.xml|sitemap-brands-8.xml|sitemap-blog.xml|robots.txt|llms.txt|security.txt)",
         "destination": "/index.html"
       }
     ]

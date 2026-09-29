@@ -108,6 +108,53 @@ export const SitemapModal: React.FC<SitemapModalProps> = ({
 
         {/* Modal Controls Bar */}
         <div className="p-4 bg-slate-900/90 border-b border-slate-800/80 space-y-3">
+          {/* Connected Multi-Sitemap Index Bar */}
+          <div className="p-3 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <span className="text-[11px] font-black text-emerald-400 flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                Connected Sitemap Index Architecture (All Sitemaps &lt; 1.8 MB &amp; Linked to Master Index)
+              </span>
+              <a
+                href="/sitemap.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1"
+              >
+                <span>Open Master /sitemap.xml</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1.5">
+              {[
+                { file: 'sitemap-pages.xml', label: 'Core & 220 Areas', size: '65 KB' },
+                { file: 'sitemap-services.xml', label: 'Nagpur Services', size: '1.9 MB' },
+                { file: 'sitemap-brands-1.xml', label: 'Brands Part 1', size: '1.5 MB' },
+                { file: 'sitemap-brands-2.xml', label: 'Brands Part 2', size: '1.5 MB' },
+                { file: 'sitemap-brands-3.xml', label: 'Brands Part 3', size: '1.5 MB' },
+                { file: 'sitemap-brands-4.xml', label: 'Brands Part 4', size: '1.5 MB' },
+                { file: 'sitemap-brands-5.xml', label: 'Brands Part 5', size: '1.5 MB' },
+                { file: 'sitemap-brands-6.xml', label: 'Brands Part 6', size: '1.5 MB' },
+                { file: 'sitemap-brands-7.xml', label: 'Brands Part 7', size: '1.5 MB' },
+                { file: 'sitemap-brands-8.xml', label: 'Brands Part 8', size: '1.3 MB' },
+                { file: 'sitemap-blog.xml', label: '1,200+ Blogs', size: '262 KB' },
+              ].map((s) => (
+                <a
+                  key={s.file}
+                  href={`/${s.file}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-blue-500/40 transition flex flex-col justify-between"
+                >
+                  <span className="text-[10px] font-bold text-white truncate">{s.file}</span>
+                  <span className="text-[9px] text-slate-400 flex items-center justify-between mt-0.5">
+                    <span>{s.label}</span>
+                    <span className="text-emerald-400 font-semibold">{s.size}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             {/* Search Input */}

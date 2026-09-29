@@ -115,11 +115,13 @@ app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', business: 'Sharon Infotech Nagpur', timestamp: new Date().toISOString() });
 });
 
-// Sitemap.xml Endpoint with caching
-app.get('/sitemap.xml', (_req, res) => {
-  res.header('Content-Type', 'application/xml');
+// Sitemap.xml & Connected Sub-Sitemaps Endpoint with caching
+app.get(/^\/sitemap(-[a-z0-9-]+)?\.xml$/, (req, res) => {
+  const fileName = req.path.replace(/^\//, '');
+  const filePath = path.join(process.cwd(), 'public', fileName);
+  res.header('Content-Type', 'application/xml; charset=utf-8');
   res.header('Cache-Control', 'public, max-age=3600, s-maxage=86400');
-  res.sendFile(path.join(process.cwd(), 'public', 'sitemap.xml'));
+  res.sendFile(filePath);
 });
 
 // Robots.txt Endpoint with caching

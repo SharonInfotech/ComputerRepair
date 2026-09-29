@@ -23,6 +23,17 @@ Allow: /support/
 Allow: /about
 Allow: /contact
 Allow: /sitemap.xml
+Allow: /sitemap-pages.xml
+Allow: /sitemap-services.xml
+Allow: /sitemap-brands-1.xml
+Allow: /sitemap-brands-2.xml
+Allow: /sitemap-brands-3.xml
+Allow: /sitemap-brands-4.xml
+Allow: /sitemap-brands-5.xml
+Allow: /sitemap-brands-6.xml
+Allow: /sitemap-brands-7.xml
+Allow: /sitemap-brands-8.xml
+Allow: /sitemap-blog.xml
 Allow: /llms.txt
 Allow: /security.txt
 Allow: /.well-known/security.txt
@@ -163,7 +174,18 @@ Disallow: /api/
 Disallow: /admin/
 
 # =====================================================================
-# Sitemap & Canonical Host Declarations
+# Sitemap Index & Connected Page-Divided Child Sitemaps
 # =====================================================================
 Sitemap: https://computerrepairnagpur.com/sitemap.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-pages.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-services.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-brands-1.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-brands-2.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-brands-3.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-brands-4.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-brands-5.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-brands-6.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-brands-7.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-brands-8.xml
+Sitemap: https://computerrepairnagpur.com/sitemap-blog.xml
 Host: https://computerrepairnagpur.com

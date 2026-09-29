@@ -22,7 +22,20 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/', '/private/', '/dashboard/', '/internal/', '/404'],
       },
     ],
-    sitemap: 'https://computerrepairnagpur.com/sitemap.xml',
+    sitemap: [
+      'https://computerrepairnagpur.com/sitemap.xml',
+      'https://computerrepairnagpur.com/sitemap-pages.xml',
+      'https://computerrepairnagpur.com/sitemap-services.xml',
+      'https://computerrepairnagpur.com/sitemap-brands-1.xml',
+      'https://computerrepairnagpur.com/sitemap-brands-2.xml',
+      'https://computerrepairnagpur.com/sitemap-brands-3.xml',
+      'https://computerrepairnagpur.com/sitemap-brands-4.xml',
+      'https://computerrepairnagpur.com/sitemap-brands-5.xml',
+      'https://computerrepairnagpur.com/sitemap-brands-6.xml',
+      'https://computerrepairnagpur.com/sitemap-brands-7.xml',
+      'https://computerrepairnagpur.com/sitemap-brands-8.xml',
+      'https://computerrepairnagpur.com/sitemap-blog.xml',
+    ],
     host: 'https://computerrepairnagpur.com',
   };
 }
