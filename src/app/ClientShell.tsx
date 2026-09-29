@@ -10,6 +10,7 @@ import { SeoAuditModal } from '../components/SeoAuditModal';
 import { BookingModal } from '../components/BookingModal';
 import { ExitIntentModal } from '../components/ExitIntentModal';
 import { FloatingWhatsAppButton } from '../components/FloatingWhatsAppButton';
+import { SiteSearchModal } from '../components/SiteSearchModal';
 import { ServiceMode } from '../types';
 
 interface ClientShellProps {
@@ -23,6 +24,7 @@ export function ClientShell({ children }: ClientShellProps) {
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const [sitemapModalOpen, setSitemapModalOpen] = useState(false);
   const [seoAuditModalOpen, setSeoAuditModalOpen] = useState(false);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [bookingMode, setBookingMode] = useState<ServiceMode>('doorstep');
   const [prefillIssue, setPrefillIssue] = useState('');
   const [activeTrackId, setActiveTrackId] = useState('FIX-1093');
@@ -54,6 +56,7 @@ export function ClientShell({ children }: ClientShellProps) {
         currentSubPage={currentSubPage}
         onNavigatePage={handleNavigatePage}
         onOpenBooking={(mode) => handleOpenBooking(mode || 'doorstep')}
+        onOpenSearch={() => setSearchModalOpen(true)}
         onOpenTrackModal={() => {
           setActiveTrackId('FIX-1093');
           const el = document.getElementById('live-tracker-section');
@@ -81,9 +84,16 @@ export function ClientShell({ children }: ClientShellProps) {
         onOpenSitemap={() => setSitemapModalOpen(true)}
         onOpenSeoAudit={() => setSeoAuditModalOpen(true)}
         onOpenBooking={(mode) => handleOpenBooking(mode || 'doorstep')}
+        onOpenSearch={() => setSearchModalOpen(true)}
       />
 
       {/* Global Interactive Modals */}
+      <SiteSearchModal
+        isOpen={searchModalOpen}
+        onClose={() => setSearchModalOpen(false)}
+        onNavigatePage={handleNavigatePage}
+      />
+
       <SitemapModal
         isOpen={sitemapModalOpen}
         onClose={() => setSitemapModalOpen(false)}

@@ -101,7 +101,7 @@ for (const loc of ALL_NAGPUR_LOCATIONS) {
 
 // 7. Primary Dhantoli HQ Canonical Service Pages (Google Policy Safe - No Thin Doorway Permutations)
 console.log('Adding primary canonical service pages...');
-const servicePages = getServicePages().filter((sp) => sp.areaId === 'dhantoli');
+const servicePages = getServicePages().filter((sp) => sp.slug.endsWith('-dhantoli'));
 for (const sp of servicePages) {
   addEntry(`${DOMAIN}/services/${sp.slug}`, '0.85', 'weekly');
 }
@@ -113,7 +113,7 @@ for (const post of GENERATED_BLOG_POSTS.slice(0, 120)) {
 
 // 9. Primary Dhantoli HQ Canonical Brand Service Pages
 console.log('Adding primary canonical brand pages...');
-const brandPages = getBrandPages().filter((bp) => bp.areaId === 'dhantoli');
+const brandPages = getBrandPages().filter((bp) => bp.slug.endsWith('-dhantoli'));
 for (const bp of brandPages) {
   addEntry(`${DOMAIN}/brands/${bp.slug}`, '0.80', 'weekly');
 }

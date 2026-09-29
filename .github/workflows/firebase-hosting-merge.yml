@@ -17,15 +17,27 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci || npm install
+        run: npm install
 
       - name: Build Production Bundle & Sitemap
         run: npm run build
 
+      - name: Verify Firebase Service Account Secret
+        id: check_secret
+        env:
+          FIREBASE_SECRET: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_COMPUTERREPAIRNAGPUR }}
+        run: |
+          if [ -n "$FIREBASE_SECRET" ]; then
+            echo "has_secret=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_secret=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Firebase Auto-Deploy Setup::To enable automatic Firebase deploy from GitHub, add FIREBASE_SERVICE_ACCOUNT_COMPUTERREPAIRNAGPUR in GitHub Settings > Secrets or run 'firebase init hosting:github' in VS Code."
+          fi
+
       - name: Deploy to Firebase Hosting (computerrepairnagpur)
+        if: steps.check_secret.outputs.has_secret == 'true'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
