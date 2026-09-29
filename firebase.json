@@ -4,8 +4,12 @@
   },
   "hosting": {
     "public": "dist",
+    "predeploy": [
+      "npm run build"
+    ],
     "ignore": [
       "firebase.json",
+      "**/.*",
       "**/node_modules/**",
       "dist/server.cjs",
       "dist/server.cjs.map"
@@ -80,7 +84,7 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "!/+(sitemap.xml|robots.txt|llms.txt|security.txt)",
         "destination": "/index.html"
       }
     ]

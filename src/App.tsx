@@ -94,6 +94,13 @@ export default function App() {
       const mainRoute = parts[0]?.toLowerCase();
       const subRoute = parts[1] || '';
 
+      if (mainRoute === 'sitemap.xml' || mainRoute === 'sitemap') {
+        setCurrentPage('home');
+        setCurrentSubPage('');
+        setSitemapModalOpen(true);
+        return;
+      }
+
       if (validPages.includes(mainRoute)) {
         setCurrentPage(mainRoute);
         setCurrentSubPage(subRoute);

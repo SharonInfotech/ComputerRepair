@@ -96,34 +96,29 @@ for (const cat of blogCats) {
 
 // 6. All Nagpur Service Area Hubs (220+ Localities)
 for (const loc of ALL_NAGPUR_LOCATIONS) {
-  addEntry(`${DOMAIN}/service-areas/${loc.id}`, '0.80', 'weekly');
+  addEntry(`${DOMAIN}/service-areas/${loc.id}`, '0.85', 'weekly');
 }
 
-// 7. All Dynamic Service Pages (6,870+ Location-Specific Service Pages)
-console.log('Fetching dynamic service pages...');
-const servicePages = getServicePages();
+// 7. Primary Dhantoli HQ Canonical Service Pages (Google Policy Safe - No Thin Doorway Permutations)
+console.log('Adding primary canonical service pages...');
+const servicePages = getServicePages().filter((sp) => sp.areaId === 'dhantoli');
 for (const sp of servicePages) {
-  addEntry(`${DOMAIN}/services/${sp.slug}`, '0.80', 'weekly');
+  addEntry(`${DOMAIN}/services/${sp.slug}`, '0.85', 'weekly');
 }
 
-// 8. All Generated Blog Posts (1,200+ blog articles)
-for (const post of GENERATED_BLOG_POSTS) {
-  addEntry(`${DOMAIN}/blog/${post.id}`, '0.70', 'weekly');
+// 8. Top Featured Technical Blog Guides (Curated High-Value Articles)
+for (const post of GENERATED_BLOG_POSTS.slice(0, 120)) {
+  addEntry(`${DOMAIN}/blog/${post.id}`, '0.75', 'weekly');
 }
 
-// 9. Top Brand Local Pages (up to ~25,000 URLs max for optimal sitemap size)
-console.log('Fetching dynamic brand pages...');
-const brandPages = getBrandPages();
-// Include top brand pages
-const maxBrandPages = 20000;
-let brandCount = 0;
+// 9. Primary Dhantoli HQ Canonical Brand Service Pages
+console.log('Adding primary canonical brand pages...');
+const brandPages = getBrandPages().filter((bp) => bp.areaId === 'dhantoli');
 for (const bp of brandPages) {
-  if (brandCount >= maxBrandPages) break;
-  addEntry(`${DOMAIN}/brands/${bp.slug}`, '0.75', 'weekly');
-  brandCount++;
+  addEntry(`${DOMAIN}/brands/${bp.slug}`, '0.80', 'weekly');
 }
 
-console.log(`Generating sitemap.xml with ${entries.length} total URLs...`);
+console.log(`Generating sitemap.xml with ${entries.length} canonical URLs...`);
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
 xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n`;
@@ -144,6 +139,11 @@ xml += `</urlset>\n`;
 
 const outputPath = path.join(process.cwd(), 'public', 'sitemap.xml');
 fs.writeFileSync(outputPath, xml, 'utf-8');
+
+const distDir = path.join(process.cwd(), 'dist');
+if (fs.existsSync(distDir)) {
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), xml, 'utf-8');
+}
 
 console.log(`Successfully regenerated sitemap.xml at ${outputPath}! Total URLs: ${entries.length}`);
 
